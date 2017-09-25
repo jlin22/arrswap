@@ -4,20 +4,23 @@
 int main(){
   srand(time(NULL));
   int x[10];
-  for (int i= 0; i<10;i++){
+  int i;
+  for(i=0; i<10;i++){
+    if(i!=9){
     x[i]=rand();
+    }
+    else{
+      x[i]=0;
+    }
     printf("%d\n",x[i]);
   }
   printf("\n");
   int y[10];
-  for (int i=0;i<10;i++){
-    int *a= &x[9-i];
-    y[i]=*a;
+  int j;
+  for( j=0;j<10;j++){
+    int *a= &x[9-j];
+    y[j]=*a;
+  printf("%d\n",y[j]);
   }
-  for(int i=0;i<10;i++){
-    printf("%d\n",y[i]);
-  }
-
-  
   return 0;
 }
